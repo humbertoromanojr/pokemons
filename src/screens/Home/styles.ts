@@ -26,8 +26,8 @@ export default {
     Title: styled.Text`
         font-size: 22px;
         color: rgba(46, 34, 34, 1);
-        padding-top: 20;
-        padding-bottom: 20;
+        padding-top: 20px;
+        padding-bottom: 20px;
     `,
 
     ContainerEmail: styled.View`

@@ -6,7 +6,7 @@ import InputCustom from '../../components/input-custom';
 import LogoNusa from '../../assets/images/logowp.png';
 import Styles from './styles';
 
-const Home: React.FC = () => {
+const Home: React.FC = ({navigation}) => {
     return (
         <Styles.Container>
             <Styles.LogoContainer>
@@ -29,8 +29,7 @@ const Home: React.FC = () => {
                 />
             </Styles.ContainerPassword>
 
-            <ButtonCustom
-                onPress={() => console.log('Chama function para logar')}>
+            <ButtonCustom onPress={() => navigation.navigate('Details')}>
                 Logar
             </ButtonCustom>
         </Styles.Container>

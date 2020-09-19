@@ -7,6 +7,7 @@ export default {
         height: 60px;
         background: #444;
         border-radius: 10px;
+        margin-top: 20px;
 
         justify-content: center;
         align-items: center;

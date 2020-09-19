@@ -7,7 +7,6 @@ export default {
         height: 60px;
         background: #f1f1f1f1;
         border-radius: 10px;
-        margin-bottom: 8px;
 
         flex-direction: row;
         align-items: center;
