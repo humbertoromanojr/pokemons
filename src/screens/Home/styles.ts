@@ -45,6 +45,7 @@ export default {
 
     ContainerPassword: styled.View`
         margin-bottom: 16;
+        flex-direction: row;
     `,
 
     ContainerButtonLogged: styled.TouchableOpacity`
