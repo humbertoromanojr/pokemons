@@ -10,15 +10,16 @@ export default {
         align-items: center;
         background: rgba(255, 255, 255, 1);
 
-        padding: 0 30px;
-        padding-bottom: 30px;
+        padding: 10px 10px;
     `,
 
     Title: styled.Text`
         font-size: 26px;
         color: rgba(46, 34, 34, 1);
-        padding-top: 20;
-        padding-bottom: 20;
+        padding-top: 10px;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: bold;
     `,
 
     PokemonsList: styled(FlatList as new () => FlatList<Pokemons>)`
