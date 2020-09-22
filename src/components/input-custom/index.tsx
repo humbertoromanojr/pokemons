@@ -12,13 +12,13 @@ interface PropsType {
 }
 
 const InputCustom: React.FC<PropsType> = (props: PropsType) => {
-    const [iconPassword, setIconPassword] = useState('eye-off');
+    const [iconPassword, setIconPassword] = useState('eye');
     const [hidePassword, setHidePassword] = useState(true);
 
     const _changeIcon = () => {
         iconPassword !== 'eye-off'
-            ? (setIconPassword('eye-off'), setHidePassword(false))
-            : (setIconPassword('eye'), setHidePassword(true));
+            ? (setIconPassword('eye-off'), setHidePassword(true))
+            : (setIconPassword('eye'), setHidePassword(false));
     };
 
     const renderInputsDefault = () => {
