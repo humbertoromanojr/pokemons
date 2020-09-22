@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 
-import api2 from '../../services/api2';
+import { loggerInfo } from '../../services/useful';
 import Styles from './styles';
 
 interface IProps {
@@ -11,36 +11,35 @@ interface IProps {
 }
 
 const ItemPokemon: React.FC<IProps> = ({ route, navigation }) => {
-    const { pokeId, pokeName, pokeUrl } = route.params;
+    const { id, name, image } = route.params;
+    loggerInfo('ItemPokemon','route => ', route.params);
 
     const [pokeData, setPokeData] = useState<Pokemons[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    const loadImagesPokemons = () => {
-      setIsLoading(true);
+    useEffect(() => {
+        const loadDetailsPokemon = async () => {
 
-      api2.get(`images/pokemon/1.png`)
-        .then(response => {
-          setPokeData(response.data);
-          console.log('ItemPokemon','loadImagesPokemons => ', response.data);
-        })
+            const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+            const res = await fetch(url);
+            const poke = await res.json();
+            loggerInfo('ItemPokemon','route => ', poke);
 
-      setIsLoading(false);
-    };
+        };
 
-    loadImagesPokemons();
-  }, []);
+        loadDetailsPokemon();
+    }, []);
+
+
 
      return (
         <Styles.Container>
             <View style={{ flexDirection: 'row', width: '100%',}}>
-                <View style={{ width: '50%', height: 150, justifyContent: 'center', alignItems: 'center', backgroundColor: '#aaa' }}>
-                    <Text>imagem</Text>
+                <View style={{ width: '50%', height: 150, justifyContent: 'center', alignItems: 'center', borderColor: '#aaa', borderWidth: 1, }}>
+                    <Image source={{ uri: image }} resizeMode="contain" style={{ width: '100%', height: '100%'}} />
                 </View>
-                <View style={{ width: '50%', justifyContent: 'flex-start', alignItems: 'center', paddingLeft: 10}}>
-                     <Text style={{ fontSize: 16, fontWeight: 'bold', textTransform: 'uppercase' }}>{pokeName}</Text>
+                <View style={{ width: '50%', justifyContent: 'flex-start', alignItems: 'center', paddingLeft: 10, }}>
+                <Text style={{ fontSize: 16, }}>#{id}{' '}</Text>
+                    <Text style={{ fontSize: 16, fontWeight: 'bold', textTransform: 'uppercase' }}>{name}</Text>
                 </View>
 
             </View>
