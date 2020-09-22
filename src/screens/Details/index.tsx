@@ -7,11 +7,12 @@ import api from '../../services/api';
 import Styles from './styles';
 
 export interface Pokemons {
-    id: number;
+    id: string;
     name: string;
     url: string;
     sprites: string;
     item: string;
+    image: string;
 }
 
 const Details: React.FC = ({ navigation }) => {
@@ -20,74 +21,27 @@ const Details: React.FC = ({ navigation }) => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const loadPokemons = () => {
-      setIsLoading(true);
+    const loadPokemons = async () => {
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=11`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const pokeData = data.results.map((result: string, index: string) =>
+    ({
+        ...result,
+        id: index + 1,
+        name: result.name,
+        image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
 
-      api.get(`pokemon?offset=0&limit=20&page=${page}`)
-        .then(response => {
-          setPokeData(response.data.results);
-          loggerInfo('Details','loadPokemons => ', response.data.results);
-        })
+    }))
+    loggerInfo('Details','loadPokemons => ', pokeData);
 
-      setIsLoading(false);
+    setPokeData(pokeData);
+
     };
 
     loadPokemons();
+
   }, []);
-
-  /* const renderItemList = ({ item }: string) => {
-        <TouchableOpacity
-          onPress={() => navigation.navigate('ItemPokemon', {
-                pokeId: item.id,
-                pokeName: item.name,
-                    pokeUrl: item.url,
-              })
-            }
-        >
-            <View
-              key={item.name}
-              style={{
-                height: 50,
-                marginBottom: 5,
-                padding: 10px,
-                backgroundColor: '#f1f1f1',
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-                borderBottomColor: '#aaa',
-                borderBottomWidth: 1,
-                borderStyle: 'dotted'
-
-                }}
-            >
-                <View
-                  style={{
-                      flexDirection: 'row',
-                        justifyContent: 'center',
-                      alignItems: 'center',
-                    }}
-                >
-                    <Text
-                      style={{
-                          backgroundColor: '#0f0',
-                          width: 30,
-                            height: 30,
-                            borderRadius: 25,
-                          marginRight: 10,
-                        }}
-                    >
-                        {item.id}
-                    </Text>
-                    <Text>{item.name}</Text>
-                </View>
-
-                <Icon name="arrow-forward" size={30} color="#666" />
-            </View>
-        </TouchableOpacity>;
-  }; */
-
-  const loadMore = () => {
-    setPage(page + 1);
-  };
 
   return (
         <Styles.Container>
@@ -98,14 +52,14 @@ const Details: React.FC = ({ navigation }) => {
               renderItem={({ item }) => (
                     <TouchableOpacity
                       onPress={() => navigation.navigate('ItemPokemon', {
-                            pokeId: item.id,
-                            pokeName: item.name,
-                            pokeUrl: item.url,
+                            id: item.id,
+                            name: item.name,
+                            image: item.image,
                           })
                         }
                     >
                         <View
-                          key={item.name}
+                          key={item.id}
                           style={{
                               height: 50,
                               marginBottom: 5,
@@ -125,17 +79,12 @@ const Details: React.FC = ({ navigation }) => {
                                   alignItems: 'center',
                                 }}
                             >
-                                <Text
-                                  style={{
-                                      backgroundColor: '#0f0',
-                                      width: 30,
-                                      height: 30,
+                                <Image source={{ uri: item.image}} style={{
+                                      width: 50,
+                                      height: 50,
                                       borderRadius: 25,
                                       marginRight: 10,
-                                    }}
-                                >
-                                    {item.id}
-                                </Text>
+                                    }} />
                                 <Text>{item.name}</Text>
                             </View>
 
