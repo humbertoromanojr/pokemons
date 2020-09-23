@@ -15,8 +15,8 @@ export interface Pokemons {
     image: string;
 }
 
-const Details: React.FC = ({ navigation }) => {
-  const [pokeData, setPokeData] = useState<Pokemons[]>([]);
+const Details: React.FC<Pokemons> = ({ navigation }) => {
+  const [pokeData, setPokeData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
 
@@ -25,6 +25,7 @@ const Details: React.FC = ({ navigation }) => {
     const url = `https://pokeapi.co/api/v2/pokemon?limit=11`;
     const res = await fetch(url);
     const data = await res.json();
+
     const pokeData = data.results.map((result: string, index: string) =>
     ({
         ...result,
