@@ -16,7 +16,7 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
     const [hidePassword, setHidePassword] = useState(true);
 
     const _changeIcon = () => {
-        iconPassword !== 'eye-off'
+        iconPassword === 'eye'
             ? (setIconPassword('eye-off'), setHidePassword(true))
             : (setIconPassword('eye'), setHidePassword(false));
     };
