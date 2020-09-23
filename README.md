@@ -13,9 +13,10 @@ POKEMON TEST
 
 -   [ReactJS](https://reactjs.org/)
 -   [React Native](https://facebook.github.io/react-native/)
--   [styled-components](https://www.styled-components.com/)
+-   [Styled Components](https://www.styled-components.com/)
 -   [Axios](https://github.com/axios/axios)
--   [React-Icons](http://react-icons.github.io/react-icons/)
+-   [React Native Icons](https://github.com/oblador/react-native-vector-icons)
+- [React Navigation v5](https://reactnavigation.org/)
 
 
 ## Instalation
@@ -29,6 +30,12 @@ Para rodar a aplicação
 `npm or yarn dev`
 
 
+## Demostration
+<br>
+  <img src="https://i.ibb.co/pP7gKPh/screens-Pokemon.png" alt="Portugues: demostrando o resultado do teste de consumo da api do pokemon, Ingles: demonstrating the pokemon api consumption test result" border="0">
+<br>
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
+
