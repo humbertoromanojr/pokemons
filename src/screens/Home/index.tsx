@@ -3,14 +3,14 @@ import React from 'react';
 import ButtonCustom from '../../components/button-custom';
 import InputCustom from '../../components/input-custom';
 
-import LogoNusa from '../../assets/images/logowp.png';
+import Logopoke from '../../assets/images/logopoke.png';
 import Styles from './styles';
 
 const Home: React.FC = ({navigation}) => {
     return (
         <Styles.Container>
             <Styles.LogoContainer>
-                <Styles.Logo source={LogoNusa} />
+                <Styles.Logo source={ Logopoke } resizeMode="contain" />
             </Styles.LogoContainer>
             <Styles.Title>Login</Styles.Title>
 

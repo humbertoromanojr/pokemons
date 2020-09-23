@@ -18,10 +18,9 @@ export default {
     LogoContainer: styled.View`
         display: flex;
     `,
-
     Logo: styled.Image`
         width: 250px;
-        height: 70px;
+        height: 170px;
     `,
 
     Title: styled.Text`
