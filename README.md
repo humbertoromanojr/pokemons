@@ -1,13 +1,13 @@
 <h1 align="center">
 <br>
-  <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Logo-Pokebola-Pok%C3%A9mon-PNG-1200x900.png" width="500" alt="pokemon" border="0">
+  <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Logo-Pokebola-Pok%C3%A9mon-PNG-1200x900.png" width="200" alt="pokemon" border="0">
 <br>
 <br>
-POKEMONS TEST
+POKEMON TEST
 </h1>
 
 
-### MOBILE
+## MOBILE
 - ⚛️ **React Js** — A JavaScript library for building user interfaces
 - ⚛️ **React Native** — A lib that provides a way to create native apps for Android and iOS
 
@@ -18,8 +18,7 @@ POKEMONS TEST
 -   [React-Icons](http://react-icons.github.io/react-icons/)
 
 
-
-## **Mobile**
+## Instalation
 Instalação do node_modules
 `npm or yarn`
 
