@@ -1,5 +1,6 @@
 import React from 'react';
-import { TouchableWithoutFeedback, Keyboard } from 'react-native'
+import { TouchableWithoutFeedback, Keyboard, SafeAreaView } from 'react-native'
+
 import ButtonCustom from '../../components/button-custom';
 import InputCustom from '../../components/input-custom';
 import Background from '../../components/Background';
@@ -10,6 +11,8 @@ import Styles from './styles';
 const Home: React.FC = ({navigation}) => {
     return (
         <Background>
+            <SafeAreaView style={{ flex: 1, backgroundColor: 'transparent', width: '100%' }}>
+
             <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
                 <Styles.Container>
                     <Styles.LogoContainer>
@@ -39,6 +42,7 @@ const Home: React.FC = ({navigation}) => {
                     </ButtonCustom>
                 </Styles.Container>
             </TouchableWithoutFeedback>
+            </SafeAreaView>
         </Background>
     );
 };

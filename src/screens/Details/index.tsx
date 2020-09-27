@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Text, TouchableOpacity, SafeAreaView } from 'react-native';
 
 import { loggerInfo } from '../../services/useful';
 import Styles from './styles';
@@ -20,7 +20,8 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
 
   useEffect(() => {
     const loadPokemons = async () => {
-    const url = `https://pokeapi.co/api/v2/pokemon?limit=11`;
+    setIsLoading(true)
+    const url = `https://pokeapi.co/api/v2/pokemon?page=${page}&perPage=20`;
     const res = await fetch(url);
     const data = await res.json();
 
@@ -35,12 +36,13 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
     /* loggerInfo('Details','loadPokemons => ', pokeData); */
 
     setPokeData(pokeData);
-
+    setIsLoading(false)
     };
 
     loadPokemons();
 
-  }, []);
+  }, [])
+
 
   const renderPokemonItem = ({ item }) => {
       return (
@@ -67,22 +69,23 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
   }
 
   return (
-        <Styles.Container>
-            <Styles.Title>Pokemons list</Styles.Title>
-            <Styles.PokemonsList
-              data={pokeData}
-              keyExtractor={item => item.id}
-              renderItem={renderPokemonItem}
-              onEndReachedThreshold={1}
-            />
+        <SafeAreaView style={{ flex: 1, backgroundColor: 'transparent', width: '100%' }}>
+            <Styles.Container>
+                <Styles.Title>Pokemons list</Styles.Title>
+                <Styles.PokemonsList
+                data={pokeData}
+                keyExtractor={item => item.id}
+                renderItem={renderPokemonItem}
+                onEndReachedThreshold={1}
+                />
 
-            <Styles.ClickToSeePokemon
-            onPress={() => navigation.navigate('Home')}
-            >
-                <Styles.Icon name="home" size={30} />
-            </Styles.ClickToSeePokemon>
-
-        </Styles.Container>
+                <Styles.ClickToSeePokemon
+                onPress={() => navigation.navigate('Home')}
+                >
+                    <Styles.Icon name="home" size={30} />
+                </Styles.ClickToSeePokemon>
+            </Styles.Container>
+        </SafeAreaView>
   );
 };
 

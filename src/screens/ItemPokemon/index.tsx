@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, FlatList, ActivityIndicator, ScrollView } from 'react-native';
+import { Text, View, FlatList, ActivityIndicator, ScrollView, SafeAreaView } from 'react-native';
 
 import { loggerInfo } from '../../services/useful';
 import api from '../../services/api';
@@ -82,38 +82,40 @@ const ItemPokemon: React.FC<Props> = ({ route }) => {
 
     return (
         <Styles.Container>
-            <ScrollView showsVerticalScrollIndicator={false}>
-            <Styles.ContainerImageAndName>
-                <Styles.ContainerImage>
-                    <Styles.PokemonImage source={{ uri: image }} resizeMode="contain"/>
-                </Styles.ContainerImage>
-                <Styles.ContainerIdAndName>
-                    <Text>#{id}{' '}</Text>
-                    <Styles.Name>{name}</Styles.Name>
-                </Styles.ContainerIdAndName>
-            </Styles.ContainerImageAndName>
+            <SafeAreaView style={{ flex: 1, backgroundColor: 'transparent', width: '100%' }}>
+                <ScrollView showsVerticalScrollIndicator={false}>
+                <Styles.ContainerImageAndName>
+                    <Styles.ContainerImage>
+                        <Styles.PokemonImage source={{ uri: image }} resizeMode="contain"/>
+                    </Styles.ContainerImage>
+                    <Styles.ContainerIdAndName>
+                        <Text>#{id}{' '}</Text>
+                        <Styles.Name>{name}</Styles.Name>
+                    </Styles.ContainerIdAndName>
+                </Styles.ContainerImageAndName>
 
-            <Styles.ContainerCategories>
-                <Styles.Title>Slot - Habilidade</Styles.Title>
-            </Styles.ContainerCategories>
-            <FlatList
-                data={abilities}
-                keyExtractor={item => String(item.id)}
-                renderItem={renderAbilitiesItems}
-                ListFooterComponent={() => renderFooter()}
-            />
-            <Styles.ContainerCategories>
-                <Styles.Title>Moves</Styles.Title>
-            </Styles.ContainerCategories>
+                <Styles.ContainerCategories>
+                    <Styles.Title>Slot - Abilities</Styles.Title>
+                </Styles.ContainerCategories>
+                <FlatList
+                    data={abilities}
+                    keyExtractor={item => String(item.id)}
+                    renderItem={renderAbilitiesItems}
+                    ListFooterComponent={() => renderFooter()}
+                />
+                <Styles.ContainerCategories>
+                    <Styles.Title>Moves</Styles.Title>
+                </Styles.ContainerCategories>
 
-            <FlatList
-                data={moves}
-                numColumns={2}
-                keyExtractor={item => String(item.id)}
-                renderItem={renderMovesItems}
-                ListFooterComponent={() => renderFooter()}
-            />
-            </ScrollView>
+                <FlatList
+                    data={moves}
+                    numColumns={2}
+                    keyExtractor={item => String(item.id)}
+                    renderItem={renderMovesItems}
+                    ListFooterComponent={() => renderFooter()}
+                />
+                </ScrollView>
+            </SafeAreaView>
         </Styles.Container>
     );
 };
