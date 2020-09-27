@@ -24,9 +24,9 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
     const renderInputsDefault = () => {
         return (
             <Styles.Container>
-                <Icon name={props.icon} size={30} color="#666" />
+                <Icon name={props.icon} size={30} color="#ffffff" />
                 <Styles.TextInput
-                    placeholderTextColor="#666"
+                    placeholderTextColor="#ffffff"
                     placeholder={props.placeholder}
                     keyboardAppearance="dark"
                 />
@@ -38,9 +38,9 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
         return (
             <Styles.Container>
                 <>
-                    <Icon name={props.icon} size={30} color="#666" />
+                    <Icon name={props.icon} size={30} color="#ffffff" />
                     <Styles.TextInput
-                        placeholderTextColor="#666"
+                        placeholderTextColor="#ffffff"
                         placeholder={props.placeholder}
                         keyboardAppearance="dark"
                         secureTextEntry={hidePassword}
@@ -51,7 +51,7 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
                         name={iconPassword}
                         onPress={() => _changeIcon()}
                         size={30}
-                        color="#666"
+                        color="#ffffff"
                     />
                 )}
             </Styles.Container>
