@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Text, Image, TouchableOpacity } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { Text, TouchableOpacity } from 'react-native';
 
 import { loggerInfo } from '../../services/useful';
 import Styles from './styles';
@@ -61,7 +60,7 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
                     <Text>{item.name}</Text>
                 </Styles.PokemonName>
 
-                <Icon name="arrow-forward" size={30} color="#666" />
+                <Styles.IconArrow name="arrow-forward" size={30} />
             </Styles.RenderPokemonItem>
         </TouchableOpacity>
       )
@@ -77,12 +76,11 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
               onEndReachedThreshold={1}
             />
 
-            <TouchableOpacity
+            <Styles.ClickToSeePokemon
             onPress={() => navigation.navigate('Home')}
-            style={{ paddingTop: 10, justifyContent: 'flex-start', alignItems: 'center',}}
             >
-                <Icon name="home" size={30} color="#ffffff" />
-            </TouchableOpacity>
+                <Styles.Icon name="home" size={30} />
+            </Styles.ClickToSeePokemon>
 
         </Styles.Container>
   );

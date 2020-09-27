@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/Feather';
 
 import Styles from './styles';
 
@@ -24,7 +23,7 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
     const renderInputsDefault = () => {
         return (
             <Styles.Container>
-                <Icon name={props.icon} size={30} color="#ffffff" />
+                <Styles.Icon name={props.icon} size={30} />
                 <Styles.TextInput
                     placeholderTextColor="#ffffff"
                     placeholder={props.placeholder}
@@ -38,7 +37,7 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
         return (
             <Styles.Container>
                 <>
-                    <Icon name={props.icon} size={30} color="#ffffff" />
+                    <Styles.Icon name={props.icon} size={30} />
                     <Styles.TextInput
                         placeholderTextColor="#ffffff"
                         placeholder={props.placeholder}
@@ -47,11 +46,10 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
                     />
                 </>
                 {props.eye && (
-                    <Icon
+                    <Styles.Icon
                         name={iconPassword}
                         onPress={() => _changeIcon()}
                         size={30}
-                        color="#ffffff"
                     />
                 )}
             </Styles.Container>

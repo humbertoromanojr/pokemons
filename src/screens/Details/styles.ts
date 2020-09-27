@@ -1,5 +1,6 @@
 import styled from 'styled-components/native';
 import {FlatList} from 'react-native';
+import IconMaterialUi from 'react-native-vector-icons/MaterialIcons';
 
 import {Pokemons} from './index';
 
@@ -39,12 +40,12 @@ export default {
         border-radius: 30px;
 
         shadow-color: rgba(4, 4, 4, 0.2);
-        shadowOffset: {
+        shadow-offset: {
             width: 0,
             height: 2,
         };
-        shadowOpacity: 0.25;
-        shadowRadius: 3.84;
+        shadow-opacity: 0.25;
+        shadow-radius: 3.84px;
 
         elevation: 3;
     `,
@@ -60,5 +61,19 @@ export default {
         height: 50px;
         border-radius: 25px;
         margin-right: 10px;
+    `,
+
+    ClickToSeePokemon: styled.TouchableOpacity`
+        padding-top: 10px;
+        justify-content: flex-start;
+        align-items: center;
+    `,
+
+    Icon: styled(IconMaterialUi)`
+        color: #ffffff;
+    `,
+
+    IconArrow: styled(IconMaterialUi)`
+        color: #666666;
     `,
 };

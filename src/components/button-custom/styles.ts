@@ -10,12 +10,13 @@ export default {
         margin-top: 20px;
 
         shadow-color: rgba(4, 4, 4, 0.2);
-        shadowOffset: {
+        shadow-offset: {
             width: 0,
             height: 2,
         };
-        shadowOpacity: 0.25;
-        shadowRadius: 3.84;
+
+        shadow-opacity: 0.25;
+        shadow-radius: 3.84px;
 
         elevation: 5;
 

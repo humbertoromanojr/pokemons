@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import IconFeather from 'react-native-vector-icons/Feather';
 
 export default {
     Container: styled.View`
@@ -9,12 +10,12 @@ export default {
         border-radius: 30px;
 
         shadow-color: rgba(0, 0, 0, 0.2);
-        shadowOffset: {
+        shadow-offset: {
             width: 0,
             height: 2,
         };
-        shadowOpacity: 0.25;
-        shadowRadius: 3.84;
+        shadow-opacity: 0.25;
+        shadow-radius: 3.84px;
 
         elevation: 5;
 
@@ -27,5 +28,9 @@ export default {
         font-size: 16px;
         color: rgba(255, 255, 255, 1)
         margin-left: 10px;
+    `,
+
+    Icon: styled(IconFeather)`
+        color: #ffffff;
     `,
 };

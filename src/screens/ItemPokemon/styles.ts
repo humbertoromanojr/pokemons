@@ -32,7 +32,7 @@ export default {
             height: 1,
         };
         shadow-opacity: 0.20;
-        shadow-radius: 1.41;
+        shadow-radius: 1.41px;
 
         elevation: 2;
     `,
