@@ -21,7 +21,11 @@ function App() {
                 <Stack.Screen
                     name="ItemPokemon"
                     component={ItemPokemonScreen}
-                    options={{ title: 'Details and skills' }}
+                    options={{
+                        title: 'Details and skills',
+                        headerTintColor: '#fff',
+                        headerStyle: { backgroundColor: '#ee4035' },
+                    }}
                 />
             </Stack.Navigator>
         </NavigationContainer>
