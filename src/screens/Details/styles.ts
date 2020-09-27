@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {FlatList} from 'react-native';
+import { FlatList } from 'react-native';
 import IconMaterialUi from 'react-native-vector-icons/MaterialIcons';
 
 import {Pokemons} from './index';
