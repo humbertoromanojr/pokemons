@@ -23,7 +23,7 @@ export default {
         align-items: center;
     `,
 
-    TextInput: styled.TextInput`
+    TextCustomInput: styled.TextInput`
         flex: 1;
         font-size: 16px;
         color: rgba(255, 255, 255, 1)
