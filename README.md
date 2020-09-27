@@ -2,7 +2,7 @@
   <img src="https://imagensemoldes.com.br/wp-content/uploads/2020/04/Logo-Pokebola-Pok%C3%A9mon-PNG-1200x900.png" width="200" alt="globo do pokemon" border="0">
 <br>
 <br>
-POKEMON TEST
+POKEMON CHALLENGE
 </h1>
 
 
@@ -35,10 +35,12 @@ Para rodar a aplicação
 
 ## Demostration
 <br>
-  <img src="https://i.ibb.co/GPqKfNR/pokemons.png" alt="Portugues: demostrando o resultado do teste de consumo da api do pokemon, Ingles: demonstrating the pokemon api consumption test result" border="0">
+  <img src="https://i.ibb.co/B4Jr8yN/pokemons.png" alt="Portugues: demostrando o resultado do teste de consumo da api do pokemon, Ingles: demonstrating the pokemon api consumption test result" border="0">
 <br>
 
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
 
+
+**Note:** Sorry but unfortunately, it was only possible to test on Android.
