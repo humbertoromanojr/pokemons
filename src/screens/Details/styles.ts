@@ -76,4 +76,11 @@ export default {
     IconArrow: styled(IconMaterialUi)`
         color: #666666;
     `,
+
+    ContainerFooter: styled.View`
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+    `,
 };

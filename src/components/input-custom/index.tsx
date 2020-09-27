@@ -37,7 +37,7 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
         return (
             <Styles.Container>
                 <>
-                    <Styles.Icon name={props.icon} /* size={30} */ />
+                    <Styles.Icon name={props.icon} size={30} />
                     <Styles.TextCustomInput
                         placeholderTextColor="#ffffff"
                         placeholder={props.placeholder}
@@ -49,7 +49,7 @@ const InputCustom: React.FC<PropsType> = (props: PropsType) => {
                     <Styles.Icon
                         name={iconPassword}
                         onPress={() => _changeIcon()}
-                        /* size={30} */
+                        size={30}
                     />
                 )}
             </Styles.Container>
