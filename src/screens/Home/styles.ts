@@ -10,23 +10,16 @@ export default {
         flex: 1;
         justify-content: center;
         align-items: center;
-        padding: 10px 10px;
+        padding: 30px;
     `,
 
     LogoContainer: styled.View`
         display: flex;
+        padding: 0 0 60px 0;
     `,
     Logo: styled.Image`
         width: 250px;
         height: 170px;
-    `,
-
-    Title: styled.Text`
-        font-size: 22px;
-        color: rgba(255, 255, 255, 1);
-        padding-top: 20px;
-        padding-bottom: 20px;
-        text-transform: uppercase;
     `,
 
     ContainerEmail: styled.View`

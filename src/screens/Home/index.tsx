@@ -14,7 +14,6 @@ const Home: React.FC = ({navigation}) => {
             <Styles.LogoContainer>
                 <Styles.Logo source={ Logopoke } resizeMode="contain" />
             </Styles.LogoContainer>
-            <Styles.Title>Login</Styles.Title>
 
             <Styles.ContainerEmail>
                 <InputCustom name="email" icon="mail" placeholder="Email" />
@@ -32,7 +31,7 @@ const Home: React.FC = ({navigation}) => {
             </Styles.ContainerPassword>
 
             <ButtonCustom onPress={() => navigation.navigate('Details')}>
-                Acessar
+                Login
             </ButtonCustom>
         </Styles.Container>
         </Background>
