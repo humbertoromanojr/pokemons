@@ -19,25 +19,39 @@ export default {
         color: rgba(46, 34, 34, 1);
         padding-top: 5px;
         padding-bottom: 5px;
-        padding-left: 5px;
+        padding-left: 10px;
         font-weight: bold;
+        color: #ffffff;
         text-transform: uppercase;
-        background-color: #f1f1f1;
+        background-color: #ee4035;
+        border-radius: 30px;
+
+        shadow-color: rgba(46, 34, 34, 1);
+        shadow-offset: {
+            width: 0,
+            height: 1,
+        };
+        shadow-opacity: 0.20;
+        shadow-radius: 1.41;
+
+        elevation: 2;
     `,
 
     Name: styled.Text`
-        font-size: 26px;
+        font-size: 22px;
         font-weight: bold;
+        color: #ee4035;
         text-transform: uppercase;
     `,
 
     ContainerImage: styled.View`
         width: 50%;
-        height: 150px;
+        height: 170px;
         justify-content: center;
         align-items: center;
-        border-color: #aaaaaa;
-        border-width: 1px;
+        border-color: #ee4035;
+        border-width: 2px;
+        border-radius: 15px;
     `,
 
     PokemonImage: styled.Image`
