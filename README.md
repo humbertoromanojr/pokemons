@@ -6,6 +6,14 @@ POKEMON CHALLENGE
 </h1>
 
 
+![Badge](https://img.shields.io/static/v1?label=reactnative&message=FrameWork&color=blue&style=for-the-badge&logo=REACTNATIVE)
+
+![Badge](https://img.shields.io/github/issues/humbertoromanojr/pokemons?logo=visual-studio-code&style=plastic&logo=appveyor)
+![Badge](https://img.shields.io/github/forks/humbertoromanojr/pokemons)
+![Badge](https://img.shields.io/github/stars/humbertoromanojr/pokemons)
+![Badge](https://img.shields.io/github/license/humbertoromanojr/pokemons)
+![Badge](https://img.shields.io/twitter/url?url=https%3A%2F%2Fgithub.com%2Fhumbertoromanojr%2Fpokemons)
+
 ## MOBILE
 - ⚛️ **React Js** — A JavaScript library for building user interfaces
 - ⚛️ **React Native** — A lib that provides a way to create native apps for Android and iOS
@@ -43,4 +51,7 @@ Para rodar a aplicação
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
 
 
-**Note:** Sorry but unfortunately, it was only possible to test on Android.
+
+
+#### Note
+- Sorry but unfortunately, it was only possible to test on Android.
