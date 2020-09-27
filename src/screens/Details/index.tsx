@@ -70,7 +70,7 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
 
   return (
         <Styles.Container>
-            <Styles.Title>Lista de Pokemons</Styles.Title>
+            <Styles.Title>Pokemons list</Styles.Title>
             <Styles.PokemonsList
               data={pokeData}
               keyExtractor={item => item.id}
@@ -82,7 +82,7 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
             onPress={() => navigation.navigate('Home')}
             style={{ paddingTop: 10, justifyContent: 'flex-start', alignItems: 'center',}}
             >
-                <Icon name="home" size={30} color="#666" />
+                <Icon name="home" size={30} color="#ffffff" />
             </TouchableOpacity>
 
         </Styles.Container>
