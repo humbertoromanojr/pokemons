@@ -24,7 +24,8 @@ export default {
     `,
 
     ButtonText: styled.Text`
-        font-size: 22px;
+        font-size: 20px;
         color: #fff;
+        text-transform: uppercase;
     `,
 };
