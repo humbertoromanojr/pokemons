@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { StatusBar } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -11,6 +12,7 @@ const Stack = createStackNavigator();
 function App() {
     return (
         <NavigationContainer>
+            <StatusBar barStyle="light-content" backgroundColor="#ee4035" />
             <Stack.Navigator>
                 <Stack.Screen
                     name="Home"

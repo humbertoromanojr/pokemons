@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { Text, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import { loggerInfo } from '../../services/useful';
-import api from '../../services/api';
 import Styles from './styles';
 
 export interface Pokemons {
