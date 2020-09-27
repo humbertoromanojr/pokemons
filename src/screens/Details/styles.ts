@@ -25,4 +25,29 @@ export default {
     PokemonsList: styled(FlatList as new () => FlatList<Pokemons>)`
         width: 100%;
     `,
+
+    RenderPokemonItem: styled.View`
+        height: 50px;
+        margin-bottom: 5px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom-color: #aaaaaa;
+        border-bottom-width: 1px;
+        border-style: dotted;
+    `,
+
+    PokemonName: styled.View`
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    `,
+
+    PokemonImage: styled.Image`
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        margin-right: 10px;
+    `,
 };

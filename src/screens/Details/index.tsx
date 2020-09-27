@@ -34,7 +34,7 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
         image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index + 1}.png`
 
     }))
-    loggerInfo('Details','loadPokemons => ', pokeData);
+    /* loggerInfo('Details','loadPokemons => ', pokeData); */
 
     setPokeData(pokeData);
 
@@ -44,55 +44,37 @@ const Details: React.FC<Pokemons> = ({ navigation }) => {
 
   }, []);
 
+  const renderPokemonItem = ({ item }) => {
+      return (
+        <TouchableOpacity
+            onPress={() => navigation.navigate('ItemPokemon', {
+                id: item.id,
+                name: item.name,
+                image: item.image,
+                })
+            }
+        >
+            <Styles.RenderPokemonItem
+                key={item.id}
+            >
+                <Styles.PokemonName>
+                    <Styles.PokemonImage source={{ uri: item.image}} />
+                    <Text>{item.name}</Text>
+                </Styles.PokemonName>
+
+                <Icon name="arrow-forward" size={30} color="#666" />
+            </Styles.RenderPokemonItem>
+        </TouchableOpacity>
+      )
+  }
+
   return (
         <Styles.Container>
             <Styles.Title>Lista de Pokemons</Styles.Title>
             <Styles.PokemonsList
               data={pokeData}
               keyExtractor={item => item.id}
-              renderItem={({ item }) => (
-                    <TouchableOpacity
-                      onPress={() => navigation.navigate('ItemPokemon', {
-                            id: item.id,
-                            name: item.name,
-                            image: item.image,
-                          })
-                        }
-                    >
-                        <View
-                          key={item.id}
-                          style={{
-                              height: 50,
-                              marginBottom: 5,
-                              padding: 10,
-                              backgroundColor: '#f1f1f1',
-                              flexDirection: 'row',
-                              justifyContent: 'space-between',
-                              borderBottomColor: '#aaa',
-                              borderBottomWidth: 1,
-                              borderStyle: 'dotted',
-                            }}
-                        >
-                            <View
-                              style={{
-                                  flexDirection: 'row',
-                                  justifyContent: 'center',
-                                  alignItems: 'center',
-                                }}
-                            >
-                                <Image source={{ uri: item.image}} style={{
-                                      width: 50,
-                                      height: 50,
-                                      borderRadius: 25,
-                                      marginRight: 10,
-                                    }} />
-                                <Text>{item.name}</Text>
-                            </View>
-
-                            <Icon name="arrow-forward" size={30} color="#666" />
-                        </View>
-                    </TouchableOpacity>
-                )}
+              renderItem={renderPokemonItem}
               onEndReachedThreshold={1}
             />
 
