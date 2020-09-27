@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, Image, FlatList, ActivityIndicator, ScrollView } from 'react-native';
+import { Text, View, FlatList, ActivityIndicator, ScrollView } from 'react-native';
 
 import { loggerInfo } from '../../services/useful';
 import api from '../../services/api';
 import Styles from './styles';
 
-interface IProps {
+type Props = {
     id: string;
     name: string;
 }
 
-const ItemPokemon: React.FC<IProps> = ({ route, navigation }) => {
+const ItemPokemon: React.FC<Props> = ({ route }) => {
     const { id ,name, image } = route.params;
     loggerInfo('ItemPokemon','routes => ', route.params);
 
@@ -40,12 +40,36 @@ const ItemPokemon: React.FC<IProps> = ({ route, navigation }) => {
         }
 
         setIsLoading(false);
-
         loadPokemonDetails();
-
     }, []);
 
-    loggerInfo('ItemPokemon','loadPokemonDetails - moves => ', moves);
+    /* loggerInfo('ItemPokemon','loadPokemonDetails - abilities => ', abilities); */
+    loggerInfo('ItemPokemon','moves => ', moves);
+
+    const renderAbilitiesItems = ({ item }) => {
+        return (
+            <Styles.AbilitiesItem key={item.ability.name}>
+                <Styles.IdSlotAbilities>{item.slot}{' - '}</Styles.IdSlotAbilities>
+                <Styles.NamesAbilities>{
+                item.ability.name}</Styles.NamesAbilities>
+            </Styles.AbilitiesItem>
+        )
+    }
+
+    const renderMovesItems = ({ item }) => {
+
+        /* TODO - ficou faltando fazer
+            const mov = item.move.name;
+            const nameMove = mov.split('-', item.move.name)
+            loggerInfo('ItemPokemon','nameMove => ', nameMove.data);
+        */
+
+        return (
+            <Styles.MovesItem key={id}>
+                <Styles.NamesMoves><Styles.Dote />{' '}{item.move.name}</Styles.NamesMoves>
+            </Styles.MovesItem>
+        )
+    }
 
     function renderFooter() {
         if (!isLoading) return null;
@@ -59,41 +83,34 @@ const ItemPokemon: React.FC<IProps> = ({ route, navigation }) => {
     return (
         <Styles.Container>
             <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={{ flexDirection: 'row', width: '100%',}}>
-                <View style={{ width: '50%', height: 150, justifyContent: 'center', alignItems: 'center', borderColor: '#aaa', borderWidth: 1, }}>
-                    <Image source={{ uri: image }} resizeMode="contain" style={{ width: '100%', height: '100%'}} />
-                </View>
-                <View style={{ width: '50%', justifyContent: 'flex-start', alignItems: 'center', paddingLeft: 10, }}>
-                    <Text style={{ fontSize: 16, }}>#{id}{' '}</Text>
-                    <Text style={{ fontSize: 16, fontWeight: 'bold',        textTransform: 'uppercase' }}>{name}</Text>
-                </View>
+            <Styles.ContainerImageAndName>
+                <Styles.ContainerImage>
+                    <Styles.PokemonImage source={{ uri: image }} resizeMode="contain"/>
+                </Styles.ContainerImage>
+                <Styles.ContainerIdAndName>
+                    <Text>#{id}{' '}</Text>
+                    <Styles.Name>{name}</Styles.Name>
+                </Styles.ContainerIdAndName>
+            </Styles.ContainerImageAndName>
 
-            </View>
-            <View style={{ paddingVertical: 20,}}>
-                <Text style={{ fontSize: 22, fontWeight: 'bold', textTransform: 'uppercase', backgroundColor: '#f1f1f1'}}>Slot - Habilidade</Text>
-            </View>
+            <Styles.ContainerCategories>
+                <Styles.Title>Slot - Habilidade</Styles.Title>
+            </Styles.ContainerCategories>
             <FlatList
                 data={abilities}
-                keyExtractor={item => String(id)}
-                renderItem={({ item }) => (
-                    <View key={id} style={{ flexDirection: 'row' }}>
-                        <Text style={{ fontSize: 22, fontWeight: 'bold' }}>{item.slot}{' - '}</Text>
-                        <Text style={{ fontSize: 22, }}>{item.ability.name}</Text>
-                    </View>
-                )}
+                keyExtractor={item => String(item.id)}
+                renderItem={renderAbilitiesItems}
                 ListFooterComponent={() => renderFooter()}
             />
-            <View style={{ paddingVertical: 20,}}>
-                <Text style={{ fontSize: 22, fontWeight: 'bold', textTransform: 'uppercase', backgroundColor: '#f1f1f1' }}>Moves</Text>
-            </View>
+            <Styles.ContainerCategories>
+                <Styles.Title>Moves</Styles.Title>
+            </Styles.ContainerCategories>
+
             <FlatList
                 data={moves}
+                numColumns={2}
                 keyExtractor={item => String(item.id)}
-                renderItem={({ item }) => (
-                    <View key={id} style={{ flexDirection: 'row' }}>
-                        <Text style={{ fontSize: 22, }}>{item.move.name}</Text>
-                    </View>
-                )}
+                renderItem={renderMovesItems}
                 ListFooterComponent={() => renderFooter()}
             />
             </ScrollView>
