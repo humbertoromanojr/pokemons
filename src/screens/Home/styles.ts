@@ -10,8 +10,6 @@ export default {
         flex: 1;
         justify-content: center;
         align-items: center;
-        background: rgba(255, 255, 255, 1);
-
         padding: 10px 10px;
     `,
 
@@ -25,9 +23,10 @@ export default {
 
     Title: styled.Text`
         font-size: 22px;
-        color: rgba(46, 34, 34, 1);
+        color: rgba(255, 255, 255, 1);
         padding-top: 20px;
         padding-bottom: 20px;
+        text-transform: uppercase;
     `,
 
     ContainerEmail: styled.View`
