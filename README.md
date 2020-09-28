@@ -5,8 +5,7 @@
 POKEMON CHALLENGE
 </h1>
 
-:construction::construction::construction::construction::construction:
-> Status do Projeto: Em desenvolvimento :warning:
+> Status do Projeto: Em desenvolvimento :warning: => :construction::construction::construction::construction::construction:
 :guitar: JR Dev :guitar:
 
 ![Badge](https://img.shields.io/static/v1?label=reactnative&message=FrameWork&color=blue&style=for-the-badge&logo=REACTNATIVE)
@@ -30,7 +29,7 @@ POKEMON CHALLENGE
 -   [React Navigation v5](https://reactnavigation.org/)
 
 
-**Note** Sorry but unfortunately, it was only possible to test on Android.
+> Note: Sorry but unfortunately, it was only possible to test on Android.
 
 
 ## Instalation
@@ -58,15 +57,13 @@ This project is licensed under the MIT License - see the [LICENSE](https://opens
 
 
 ## Author
-<img src="https://avatars1.githubusercontent.com/u/6500430?s=460&u=42d7e22fa1c77b061505fe1cfc3fcaa3e2a4d1e5&v=4" width="30" alt="linkedin.com/in/junior-dev">
+<img src="https://avatars1.githubusercontent.com/u/6500430?s=460&u=42d7e22fa1c77b061505fe1cfc3fcaa3e2a4d1e5&v=4" width="80" alt="linkedin.com/in/junior-dev">
 <br />
 :guitar: JR Dev :guitar:
-<br /><br />
+<br />
 
-![Badge](https://gitlab.com/hjrdev?logo=linkedin?label=GITLAB&message=REPO&color=blue&style=for-the-badge&logo=GITLAB)
-
-![Badge](https://www.linkedin.com/in/junior-dev?label=LINKEDIN&message=NETWORK&color=blue&style=for-the-badge&logo=LINKEDIN)<br />
-
+LinkedIn: https://www.linkedin.com/in/junior-dev <br />
+GitLab: https://gitlab.com/hjrdev <br />
 Email: astronomi@gmail.com <br />
 <br /> <br />
 
