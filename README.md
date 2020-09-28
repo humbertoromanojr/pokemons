@@ -58,14 +58,12 @@ This project is licensed under the MIT License - see the [LICENSE](https://opens
 
 ## Author
 <img src="https://avatars1.githubusercontent.com/u/6500430?s=460&u=42d7e22fa1c77b061505fe1cfc3fcaa3e2a4d1e5&v=4" width="80" alt="linkedin.com/in/junior-dev">
-<br />
 :guitar: JR Dev :guitar:
 <br />
 
 LinkedIn: https://www.linkedin.com/in/junior-dev <br />
 GitLab: https://gitlab.com/hjrdev <br />
 Email: astronomi@gmail.com <br />
-<br /> <br />
+<br />
 
-
-Made with: heart: and lots of animation by :guitar: JR Dev :guitar:
+Made with :heart: and lots of animation by :guitar: JR Dev :guitar:
